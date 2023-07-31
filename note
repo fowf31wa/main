@@ -1,8 +1,11 @@
 module = {}
 
 function module:autoFarm(v)
-
+if v then
 print(v)
+else
+print("hi")
+end
 
 end
 
