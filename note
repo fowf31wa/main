@@ -1,7 +1,10 @@
-local funcs =  {}
+-- Define the table that will hold the functions
+local funcs = {}
 
-function funcs:print()
-print("hi")
+-- Define the print function
+function funcs.print()
+    print("hi")
 end
 
+-- Return the table containing the functions
 return funcs
