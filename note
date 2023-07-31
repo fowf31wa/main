@@ -1,10 +1,9 @@
--- Define the table that will hold the functions
-local funcs = {}
+module = {}
 
--- Define the print function
-function funcs.print()
-    print("hi")
+function module:autoFarm()
+
+print("hi")
+
 end
 
--- Return the table containing the functions
-return funcs
+return module
