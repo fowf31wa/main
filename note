@@ -80,7 +80,7 @@ ErrorSound.SoundId = "rbxassetid://2254874567"
 ErrorSound.Volume = 0.28
 ErrorSound.Parent = NoteScreenGui
 
-function module:Note(Title,Message,Error)
+function module:Send(Title,Message,Error)
 	local Note = NoteSample:Clone()
 
 	Note.Position = UDim2.new(0, 0, 0, 0)
