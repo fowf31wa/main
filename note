@@ -1,8 +1,8 @@
 module = {}
 
-function module:autoFarm()
+function module:autoFarm(v)
 
-print("v")
+print(v)
 
 end
 
