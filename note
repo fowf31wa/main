@@ -1,11 +1,8 @@
 module = {}
 
-function module:autoFarm(v)
-if v then
-print(v)
-else
-print("hi")
-end
+function module:autoFarm()
+
+print("v")
 
 end
 
