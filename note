@@ -1,10 +1,10 @@
 local module = {}
 
 local rtbl = {}
-local NotificationsF = game.CoreGui:FindFirstChild("NoteUI") and game.CoreGui.NoteUI:FindFirstChild("Notifications") or Instance.new("Frame")
-local NoteSampleF = game.CoreGui:FindFirstChild("NoteUI") and game.CoreGui.NoteUI:FindFirstChild("NoteSample") or Instance.new("Frame")
-local NormalSoundF = game.CoreGui:FindFirstChild("NoteUI") and game.CoreGui.NoteUI:FindFirstChild("NormalSound") or Instance.new("Sound")
-local ErrorSoundF = game.CoreGui:FindFirstChild("NoteUI") and game.CoreGui.NoteUI:FindFirstChild("ErrorSound") or Instance.new("Sound")
+local NotificationsF = nil
+local NoteSampleF = nil
+local NormalSoundF = nil
+local ErrorSoundF = nil
 local NormalColor = Color3.new(0,0,0)
 local ErrorColor = Color3.fromRGB(38, 11, 11)
 if not game.CoreGui:FindFirstChild("NoteUI") then
@@ -44,7 +44,7 @@ if not game.CoreGui:FindFirstChild("NoteUI") then
 	NoteSample.Position = UDim2.new(0, -180, 0, 0)
 	NoteSample.Size = UDim2.new(1, 0, 0, 40)
 	NoteSample.ZIndex = 16
-	NoteSample.Parent = NoteScreenGui
+	NoteSample.Parent = UIListLayout
 
 	Frame.Parent = NoteSample
 	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -95,12 +95,12 @@ if not game.CoreGui:FindFirstChild("NoteUI") then
 	ErrorSound.Name = "ErrorSound"
 else 
     NotificationsF = game.CoreGui.NoteUI:FindFirstChild("Notifications")
-	NoteSampleF = game.CoreGui.NoteUI:FindFirstChild("NoteSample")
+	NoteSampleF = game.CoreGui.NoteUI.Notifications.UIListLayout:FindFirstChild("NoteSample")
 	NormalSoundF = game.CoreGui.NoteUI:FindFirstChild("NormalSound")
 	ErrorSoundF = game.CoreGui.NoteUI:FindFirstChild("ErrorSound")
 end
 
-function module:Notify(Title,Message,Error)
+function module:Note(Title,Message,Error)
 	local Note = NoteSampleF:Clone()
 
 	Note.Position = UDim2.new(0, 0, 0, 0)
